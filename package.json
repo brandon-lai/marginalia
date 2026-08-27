@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --import ./scripts/ts-resolve.mjs --test tests/*.test.mjs",
     "db:init": "node scripts/db-init.mjs",
-    "seed": "node scripts/seed-demo-vault.mjs"
+    "seed": "node scripts/seed-demo-vault.mjs",
+    "db:rebuild": "node --import ./scripts/ts-resolve.mjs scripts/rebuild-note-index.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.121.0",
