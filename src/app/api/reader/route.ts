@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { fetchAndExtract, extractFromHtml } from "@/lib/reader/extract"
+import { htmlToText, countWords } from "@/lib/reader/html-text"
 import { getSource, setReaderCache } from "@/lib/db/repo"
 import { getConfig } from "@/lib/config"
 import { DEMO_READER } from "@/lib/db/demo-data"
@@ -35,7 +36,7 @@ export async function GET(req: Request) {
     if (demo) {
       return NextResponse.json({
         ok: true, title: demo.title, byline: demo.byline, siteName: "example.com",
-        html: demo.html, wordCount: countWords(demo.html), cached: true, demo: true,
+        html: demo.html, wordCount: countWords(htmlToText(demo.html)), cached: true, demo: true,
       })
     }
   }
@@ -94,7 +95,7 @@ export async function POST(req: Request) {
   const url = body.url ?? "about:pasted"
 
   const result = body.html
-    ? extractFromHtml(body.html, url)
+    ? await extractFromHtml(body.html, url)
     : ({
         ok: true as const,
         title: "Pasted text",
@@ -102,7 +103,7 @@ export async function POST(req: Request) {
         siteName: null,
         html: body.text!.split(/\n{2,}/).map((p) => `<p>${escapeHtml(p.trim())}</p>`).join("\n"),
         text: body.text!,
-        wordCount: (body.text!.match(/[\p{L}\p{N}'’-]+/gu) ?? []).length,
+        wordCount: countWords(body.text!),
         excerpt: null,
       })
 
@@ -112,10 +113,6 @@ export async function POST(req: Request) {
     if (getConfig().hasDatabase) await setReaderCache(body.sourceId, key, result.wordCount).catch(() => {})
   }
   return NextResponse.json(result)
-}
-
-function countWords(html: string): number {
-  return (html.replace(/<[^>]+>/g, " ").match(/[\p{L}\p{N}'’-]+/gu) ?? []).length
 }
 
 function escapeHtml(s: string): string {

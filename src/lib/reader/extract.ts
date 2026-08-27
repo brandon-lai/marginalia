@@ -1,7 +1,20 @@
 import "server-only"
-import { JSDOM } from "jsdom"
-import { Readability } from "@mozilla/readability"
-import createDOMPurify from "dompurify"
+import { htmlToText, countWords } from "./html-text"
+
+/**
+ * jsdom, Readability and DOMPurify are imported lazily, inside the one function
+ * that needs them. A top-level import of jsdom fails outright in some serverless
+ * runtimes (see html-text.ts), and when that happens only live extraction should
+ * be unavailable — not every page that merely wanted the article's text.
+ */
+async function domTools() {
+  const [{ JSDOM }, { Readability }, { default: createDOMPurify }] = await Promise.all([
+    import("jsdom"),
+    import("@mozilla/readability"),
+    import("dompurify"),
+  ])
+  return { JSDOM, Readability, createDOMPurify }
+}
 
 /**
  * Server-side article extraction (PRD §6.4). Failure is expected and must be
@@ -71,11 +84,22 @@ export async function fetchAndExtract(url: string, timeoutMs = 15_000): Promise<
   }
 
   const raw = await res.text()
-  return extractFromHtml(raw, url)
+  return await extractFromHtml(raw, url)
 }
 
-export function extractFromHtml(raw: string, url: string): ExtractionResult {
-  let dom: JSDOM
+export async function extractFromHtml(raw: string, url: string): Promise<ExtractionResult> {
+  let JSDOM, Readability, createDOMPurify
+  try {
+    ;({ JSDOM, Readability, createDOMPurify } = await domTools())
+  } catch (e) {
+    return {
+      ok: false,
+      reason: "no-article",
+      message: `The HTML parser is unavailable in this runtime, so live extraction cannot run here: ${(e as Error).message}`,
+    }
+  }
+
+  let dom
   try {
     dom = new JSDOM(raw, { url })
   } catch (e) {
@@ -107,7 +131,7 @@ export function extractFromHtml(raw: string, url: string): ExtractionResult {
   })
 
   const text = htmlToText(html)
-  const wordCount = (text.match(/[\p{L}\p{N}'’-]+/gu) ?? []).length
+  const wordCount = countWords(text)
 
   if (wordCount < 60) {
     return {
@@ -129,14 +153,4 @@ export function extractFromHtml(raw: string, url: string): ExtractionResult {
   }
 }
 
-/** Plain text of the article, the coordinate space highlight offsets live in. */
-export function htmlToText(html: string): string {
-  const dom = new JSDOM(`<body>${html}</body>`)
-  const body = dom.window.document.body
-  for (const el of body.querySelectorAll("script,style")) el.remove()
-  // Block elements become newlines so paragraph boundaries survive.
-  for (const el of body.querySelectorAll("p,div,h1,h2,h3,h4,h5,h6,li,blockquote,pre,tr,figcaption,br")) {
-    el.insertAdjacentText("beforeend", "\n")
-  }
-  return (body.textContent ?? "").replace(/\n{3,}/g, "\n\n").trim()
-}
+export { htmlToText, countWords }

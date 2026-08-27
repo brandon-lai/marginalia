@@ -6,7 +6,7 @@ import { getConfig } from "@/lib/config"
 import { newId } from "@/lib/db/client"
 import { readCache } from "@/lib/reader/cache"
 import { DEMO_READER } from "@/lib/db/demo-data"
-import { htmlToText } from "@/lib/reader/extract"
+import { htmlToText } from "@/lib/reader/html-text"
 
 export const dynamic = "force-dynamic"
 export const runtime = "nodejs"

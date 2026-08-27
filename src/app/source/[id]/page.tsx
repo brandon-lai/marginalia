@@ -9,7 +9,7 @@ import { ReaderPane } from "@/components/ReaderPane"
 import { RelatedPanel } from "@/components/RelatedPanel"
 import { DEMO_READER } from "@/lib/db/demo-data"
 import { readCache } from "@/lib/reader/cache"
-import { htmlToText } from "@/lib/reader/extract"
+import { htmlToText } from "@/lib/reader/html-text"
 
 export const dynamic = "force-dynamic"
 
