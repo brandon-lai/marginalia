@@ -1,0 +1,71 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>marginalia options</title>
+<style>
+  body {
+    font: 14px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 34rem; margin: 40px auto; padding: 0 20px;
+    background: #faf8f8; color: #2b2b2b;
+  }
+  h1 { font-size: 19px; margin: 0 0 4px; }
+  p.sub { color: #7a7a7a; margin: 0 0 22px; }
+  label { display: block; margin-bottom: 14px; }
+  label > span {
+    display: block; font-size: 11px; text-transform: uppercase;
+    letter-spacing: .05em; color: #7a7a7a; margin-bottom: 3px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  input {
+    width: 100%; box-sizing: border-box; padding: 7px 9px; font: inherit;
+    border: 0.5px solid #d2d2d2; border-radius: 4px; background: #fff; color: inherit;
+  }
+  button {
+    padding: 6px 12px; border-radius: 4px; cursor: pointer; font: inherit;
+    background: #284b63; color: #fff; border: 0.5px solid #284b63;
+  }
+  button.plain { background: #fff; color: #2b2b2b; border-color: #d2d2d2; }
+  .status { margin-top: 14px; font-size: 13px; }
+  .ok { color: #2f7d4f; } .err { color: #a13d3d; } .warn { color: #9a6a00; }
+  .note {
+    margin-top: 22px; padding: 11px 13px; border: 0.5px solid #e5e5e5;
+    border-radius: 4px; background: #f2eeee; font-size: 13px; color: #4e4e4e;
+  }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #161618; color: #ebebec; }
+    input { background: #1d1d20; color: #ebebec; border-color: #4a464a; }
+    button.plain { background: #1d1d20; color: #ebebec; border-color: #4a464a; }
+    .note { background: #1d1d20; border-color: #393639; color: #b6b6b8; }
+  }
+</style>
+
+<h1>marginalia</h1>
+<p class="sub">Where to send captures, and the secret that proves they came from you.</p>
+
+<label>
+  <span>App endpoint</span>
+  <input id="endpoint" type="text" placeholder="http://localhost:3117">
+</label>
+
+<label>
+  <span>Capture secret</span>
+  <input id="secret" type="password" placeholder="paste the value of CAPTURE_SECRET">
+</label>
+
+<div style="display:flex;gap:8px;align-items:center">
+  <button id="save">Save</button>
+  <button id="test" class="plain">Test connection</button>
+  <button id="flush" class="plain">Retry queued</button>
+</div>
+
+<div class="status" id="status"></div>
+
+<div class="note">
+  Any web page can <code>fetch</code> localhost, so the capture endpoint is not left open.
+  Generate a secret with <code>openssl rand -hex 32</code>, put it in the app's
+  <code>.env.local</code> as <code>CAPTURE_SECRET</code>, and paste the same value here.
+  This is a single-user local app; OAuth would be theatre, and an unauthenticated
+  write endpoint would be a hole.
+</div>
+
+<script src="options.js"></script>

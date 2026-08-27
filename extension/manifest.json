@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "marginalia",
+  "version": "1.0.0",
+  "description": "Highlight anything on the web and send it to your brain vault, with the reaction that makes it worth keeping.",
+  "permissions": ["storage", "contextMenus", "activeTab", "scripting", "alarms"],
+  "host_permissions": ["http://localhost:3117/*", "http://127.0.0.1:3117/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "options_page": "options.html",
+  "action": { "default_title": "Save this page to your brain" },
+  "commands": {
+    "save-selection": {
+      "suggested_key": { "default": "Ctrl+Shift+S", "mac": "Command+Shift+S" },
+      "description": "Save the current selection"
+    },
+    "save-page": {
+      "suggested_key": { "default": "Ctrl+Shift+D", "mac": "Command+Shift+D" },
+      "description": "Save this page to read later"
+    }
+  },
+  "icons": { "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

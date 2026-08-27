@@ -103,9 +103,25 @@ export async function recentlyAdded(
   }))
 }
 
-/** "Jun 04, 2026" — the format index.md's Recently Added block uses. */
+/**
+ * "Jun 04, 2026" — the format index.md's Recently Added block uses.
+ *
+ * Formatted in the commit's own timezone offset, which is what
+ * `git log --date=format:"%b %d, %Y"` does. Formatting in UTC instead shifts
+ * every evening commit to the following day: the vault's own history has a
+ * commit at 2026-06-04T23:14-04:00 that index.md records as Jun 04, and a UTC
+ * rendering called it Jun 05, so every accepted note rewrote the whole
+ * Recently Added block with dates one day later than the vault's.
+ */
 export function formatDate(iso: string): string {
+  const offset = iso.match(/([+-])(\d{2}):(\d{2})$/)
   const d = new Date(iso)
+  if (offset) {
+    const sign = offset[1] === "-" ? -1 : 1
+    const minutes = sign * (Number(offset[2]) * 60 + Number(offset[3]))
+    // Shift into a UTC instant whose UTC fields read as the commit's local time.
+    d.setTime(d.getTime() + minutes * 60_000)
+  }
   const month = d.toLocaleString("en-US", { month: "short", timeZone: "UTC" })
   const day = String(d.getUTCDate()).padStart(2, "0")
   return `${month} ${day}, ${d.getUTCFullYear()}`

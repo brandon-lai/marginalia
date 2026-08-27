@@ -1,0 +1,17 @@
+/* Session-persistent highlight painted after a successful save. */
+mark.marginalia-hl {
+  background: rgba(255, 242, 54, 0.55);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0.06em 0;
+}
+mark.marginalia-hl.marginalia-green { background: rgba(168, 230, 163, 0.55); }
+mark.marginalia-hl.marginalia-blue  { background: rgba(163, 213, 255, 0.55); }
+mark.marginalia-hl.marginalia-pink  { background: rgba(255, 179, 209, 0.55); }
+
+@media (prefers-color-scheme: dark) {
+  mark.marginalia-hl { background: rgba(179, 170, 2, 0.32); }
+  mark.marginalia-hl.marginalia-green { background: rgba(63, 122, 58, 0.32); }
+  mark.marginalia-hl.marginalia-blue  { background: rgba(47, 95, 133, 0.32); }
+  mark.marginalia-hl.marginalia-pink  { background: rgba(138, 63, 96, 0.32); }
+}
