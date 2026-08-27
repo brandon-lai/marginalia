@@ -45,15 +45,25 @@ export default async function VaultPage() {
           })}
         </div>
 
+        {/* Dates come from git, so a vault with no history has none. An empty
+            section under a heading reads as broken; say what is missing. */}
         <div className="section-label" style={{ padding: "26px 0 6px" }}>Recently added</div>
-        <div className="note-list">
-          {recent.map((n) => (
-            <Link key={n.path} href={`/vault/note/${encodeURIComponent(n.path)}`}>
-              <span>{n.title}</span>
-              <span className="meta">{n.folder}</span>
-            </Link>
-          ))}
-        </div>
+        {recent.length > 0 ? (
+          <div className="note-list">
+            {recent.map((n) => (
+              <Link key={n.path} href={`/vault/note/${encodeURIComponent(n.path)}`}>
+                <span>{n.title}</span>
+                <span className="meta">{n.createdAt ? new Date(n.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : n.folder}</span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="notice">
+            No dates are available for this vault. Dates come from git history, never from
+            file mtimes — Google Drive rewrites those on sync — so a vault that is not a git
+            repository has none to show.
+          </div>
+        )}
       </div>
     </main>
   )

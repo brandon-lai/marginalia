@@ -146,15 +146,36 @@ export function subjectFolders(index: VaultIndex): { folder: string; count: numb
     .sort((a, b) => b.count - a.count || a.folder.localeCompare(b.folder))
 }
 
-/** The MOC for a subject, by the Homebase/<Subject> MOC.md convention. */
+/**
+ * The MOC for a subject.
+ *
+ * The naming convention is Homebase/<Subject> MOC.md, but it is a convention
+ * and not a rule: the vault's Computer Science folder is served by "CS MOC".
+ * Matching on the name alone reported "no MOC yet" for the single largest
+ * subject in the vault, so the last resort is to ask which MOC actually links
+ * into the folder — a MOC is defined by what it indexes, not by what it is
+ * called.
+ */
 export function mocFor(index: VaultIndex, folder: string): Note | undefined {
   const direct = index.notes.get(`Homebase/${folder} MOC.md`)
   if (direct) return direct
-  // CS MOC covers Computer Science; match on the tag or a loose title.
-  for (const n of index.notes.values()) {
-    if (n.type !== "moc") continue
-    const stem = n.title.replace(/\s+MOC$/, "")
-    if (stem.toLowerCase() === folder.toLowerCase()) return n
+
+  const mocs = [...index.notes.values()].filter((n) => n.type === "moc")
+
+  for (const n of mocs) {
+    if (n.title.replace(/\s+MOC$/, "").toLowerCase() === folder.toLowerCase()) return n
   }
-  return undefined
+
+  // Which MOC's links land in this folder most often?
+  let best: { note: Note; hits: number } | undefined
+  for (const n of mocs) {
+    let hits = 0
+    for (const link of n.outgoing) {
+      if (link.isEmbed) continue
+      const target = index.byBasename.get(link.target)
+      if (target && index.notes.get(target)?.folder === folder) hits++
+    }
+    if (hits >= 2 && (!best || hits > best.hits)) best = { note: n, hits }
+  }
+  return best?.note
 }
