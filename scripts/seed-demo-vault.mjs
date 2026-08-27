@@ -105,13 +105,31 @@ const UNRESOLVED = [
 
 const RELATIONS = ["Related", "Builds on", "Enables", "Contrasts with", "Compare"]
 
+// Openers are consumed in rotation rather than sampled, so no two notes in the
+// demo vault open with the same sentence — repeated excerpts made the related
+// notes panel look broken when every row read identically.
 const OPENERS = [
   "The idea is simpler than the name suggests once you see what it is protecting against.",
   "This shows up everywhere once you have a word for it, which is most of the value of learning it.",
   "The mechanism is mechanical; the interesting part is when it stops being the right choice.",
   "Worth holding onto because it reframes a problem I kept solving badly by instinct.",
   "A small idea with a large blast radius across everything downstream of it.",
+  "Most of the difficulty here is bookkeeping, and most of the value is in noticing that early.",
+  "It answers a question I did not know I was asking until I had the vocabulary for it.",
+  "The definition is short; the consequences take a while to feel in the hands.",
+  "This is the thing that separates a system that bends from one that snaps.",
+  "A rule that looks arbitrary until you see the failure it was written to prevent.",
+  "The interesting claim is not what it does but what it refuses to promise.",
+  "Once named, this turns a recurring surprise into an expected cost.",
+  "The trap is treating it as a technique when it is really a constraint.",
+  "Small enough to state in a sentence, large enough to reorganise a design around.",
+  "What makes this stick is that the same shape shows up in three unrelated places.",
+  "The useful version of this is narrower than the popular version.",
+  "It is less a solution than a way of deciding which problem you would rather have.",
+  "The first time this bites, it looks like a bug in something else entirely.",
 ]
+let openerCursor = 0
+const nextOpener = () => OPENERS[openerCursor++ % OPENERS.length]
 const MIDDLES = [
   "The tradeoff is between doing work now and doing more work later under worse information.",
   "It works by pushing a decision to the point where the most context is available.",
@@ -129,7 +147,7 @@ const WHY = [
 const allTitles = Object.values(SUBJECTS).flatMap((s) => s.notes)
 
 function conceptNote(title, subject, meta, links) {
-  const lines = [`# ${title}`, "", `#${meta.tag}`, "", "## What It Is", pick(OPENERS), ""]
+  const lines = [`# ${title}`, "", `#${meta.tag}`, "", "## What It Is", nextOpener(), ""]
   lines.push("## How It Works", pick(MIDDLES), "")
   if (rand() > 0.55) {
     lines.push("| Property | Value | Why |", "|---|---|---|")
@@ -153,11 +171,11 @@ function bookNote(title, meta) {
     `**Author:** ${pick(["Donella Meadows", "Don Norman", "James C. Scott"])}`,
     `**Completed:** ${pick(["Feb 2026", "Apr 2026", "May 2026"])}`,
     `**Rating:** ${pick(["8/10", "9/10", "7/10"])}`, "",
-    "## The Big Idea", pick(OPENERS), "",
+    "## The Big Idea", nextOpener(), "",
     "## Core Learnings",
     "1. " + pick(MIDDLES),
     "2. " + pick(WHY),
-    "3. " + pick(OPENERS), "",
+    "3. " + nextOpener(), "",
     "## Personal Takeaways", pick(WHY), "",
     "## Connections",
     `- Related: [[${pick(allTitles.filter((t) => !SUBJECTS.Books.notes.includes(t)))}]]`,

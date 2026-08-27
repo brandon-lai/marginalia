@@ -3,17 +3,23 @@
 #economics
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+This is the thing that separates a system that bends from one that snaps.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+
+| Property | Value | Why |
+|---|---|---|
+| Cost | amortized O(1) | worst case only |
+| Failure | delayed | nothing measures it |
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Contrasts with: [[The Hippocampus]]
-- Compare: [[Two Pointer Technique]]
+- Enables: [[Graph Traversal]]
+- Related: [[Idempotency]]
+- Related: [[Chiaroscuro]]
 - See: [[Economics MOC]]
 
 ## Source

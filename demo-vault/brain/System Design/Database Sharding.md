@@ -3,15 +3,10 @@
 #system-design
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+It is less a solution than a way of deciding which problem you would rather have.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | amortized O(1) | worst case only |
-| Failure | delayed | nothing measures it |
+Every implementation is some answer to the question of what you are willing to lose.
 
 ```python
 def database_sharding(xs):
@@ -22,8 +17,9 @@ def database_sharding(xs):
 It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Compare: [[Load Balancing]]
-- Contrasts with: [[Seeing Like a State]]
+- Related: [[Public Goods]]
+- Builds on: [[Byzantine vs. Western Depictions of Christ]]
+- Builds on: [[Green's Theorem]]
 - See: [[System Design MOC]]
 
 ## Source

@@ -3,23 +3,24 @@
 #system-design
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+The idea is simpler than the name suggests once you see what it is protecting against.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
 
-```python
-def rate_limiting(xs):
-    return sorted(xs)
-```
+| Property | Value | Why |
+|---|---|---|
+| Cost | amortized O(1) | after the index is warm |
+| Failure | delayed | it fails closed |
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Builds on: [[Two Pointer Technique]]
-- Builds on: [[Neuroplasticity]]
-- Enables: [[Long-Term Potentiation]]
+- Enables: [[Sfumato]]
+- Contrasts with: [[Byzantine vs. Western Depictions of Christ]]
+- Compare: [[Big O]]
+- Related: [[Service Discovery]]
 - See: [[System Design MOC]]
 
 ## Source

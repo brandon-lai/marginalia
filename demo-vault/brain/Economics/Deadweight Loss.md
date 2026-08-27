@@ -3,18 +3,23 @@
 #economics
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+Once named, this turns a recurring surprise into an expected cost.
 
 ## How It Works
 The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
 
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(1) | worst case only |
+| Failure | silent | nothing measures it |
+
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Builds on: [[The Hippocampus]]
-- Enables: [[Public Goods]]
-- Enables: [[Consistent Hashing]]
+- Contrasts with: [[Byzantine vs. Western Depictions of Christ]]
+- Contrasts with: [[Hashmap and Dictionary]]
+- Builds on: [[Action Potential]]
 - See: [[Economics MOC]]
 
 ## Source

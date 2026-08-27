@@ -59,9 +59,9 @@ title: Demo Brain
 
 ## Recently Added
 
-- [[Circuit Breaker]] — Aug 20, 2026
-- [[Array and List]] — Aug 20, 2026
-- [[Sfumato]] — Aug 20, 2026
-- [[Neuroplasticity]] — Aug 20, 2026
 - [[Processes and Threads]] — Aug 20, 2026
-- [[CAP Theorem]] — Aug 20, 2026
+- [[Big O]] — Aug 20, 2026
+- [[Seeing Like a State]] — Aug 20, 2026
+- [[Linear Perspective]] — Aug 20, 2026
+- [[Conspicuous Consumption and Veblen Goods]] — Aug 20, 2026
+- [[Deadweight Loss]] — Aug 20, 2026

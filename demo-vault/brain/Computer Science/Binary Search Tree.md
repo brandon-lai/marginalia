@@ -3,18 +3,17 @@
 #cs
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+The mechanism is mechanical; the interesting part is when it stops being the right choice.
 
 ## How It Works
 The tradeoff is between doing work now and doing more work later under worse information.
 
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Related: [[Deadlock]]
-- Compare: [[Deadweight Loss]]
-- Related: [[Epigenetics]]
+- Contrasts with: [[Myelination]]
+- Contrasts with: [[Database Sharding]]
 - See: [[CS MOC]]
 
 ## Source

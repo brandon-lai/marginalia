@@ -6,15 +6,20 @@
 A small idea with a large blast radius across everything downstream of it.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The tradeoff is between doing work now and doing more work later under worse information.
+
+```python
+def opportunity_cost(xs):
+    return sorted(xs)
+```
 
 ## Why It Matters
-Knowing this turns a class of surprising failures into an expected one.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Enables: [[Virtual Memory]]
-- Compare: [[Network Effects]]
-- Related: [[Donor Portraits]]
+- Contrasts with: [[The Hippocampus]]
+- Compare: [[Long-Term Potentiation]]
+- Compare: [[Neuroplasticity]]
 - See: [[Economics MOC]]
 
 ## Source

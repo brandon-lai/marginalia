@@ -3,19 +3,28 @@
 #economics
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+It answers a question I did not know I was asking until I had the vocabulary for it.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(1) | the common path |
+| Failure | silent | it fails closed |
+
+```python
+def price_elasticity(xs):
+    return sorted(xs)
+```
 
 ## Why It Matters
-Knowing this turns a class of surprising failures into an expected one.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Contrasts with: [[Conspicuous Consumption and Veblen Goods]]
-- Compare: [[Recursion]]
-- Contrasts with: [[Binary Search Tree]]
-- Related: [[Observability]]
+- Enables: [[Virtual Memory]]
+- Compare: [[Network Effects]]
+- Related: [[Donor Portraits]]
 - See: [[Economics MOC]]
 
 ## Source

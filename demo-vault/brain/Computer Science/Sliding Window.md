@@ -3,23 +3,23 @@
 #cs
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+The trap is treating it as a technique when it is really a constraint.
 
 ## How It Works
-It works by pushing a decision to the point where the most context is available.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | O(1) | the common path |
-| Failure | loud | it retries first |
+| Cost | O(log n) | worst case only |
+| Failure | silent | nothing measures it |
 
 ## Why It Matters
 It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
 - Compare: [[Binary Search Tree]]
-- Builds on: [[Cache]]
-- Related: [[Public Goods]]
+- Enables: [[Recursion]]
+- Enables: [[Linked List]]
 - See: [[CS MOC]]
 
 ## Source

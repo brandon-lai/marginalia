@@ -14,9 +14,9 @@
 
 ## Topics To Explore
 *Unwritten notes — placeholders and future captures.*
-- [ ] Property Testing
-- [ ] Cache Invalidation
-- [ ] Amortized Analysis
+- [ ] The Italian Renaissance
+- [ ] Epigenetics
+- [ ] Queue
 
 ## Key Questions This Subject Answers
-- Knowing this turns a class of surprising failures into an expected one.
+- It explains why the obvious fix usually makes the second-order problem worse.

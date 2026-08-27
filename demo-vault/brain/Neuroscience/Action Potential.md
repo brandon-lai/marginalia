@@ -3,22 +3,17 @@
 #neuroscience
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+Most of the difficulty here is bookkeeping, and most of the value is in noticing that early.
 
 ## How It Works
-The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(1) | after the index is warm |
-| Failure | loud | it fails closed |
+It works by pushing a decision to the point where the most context is available.
 
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Compare: [[Consistent Hashing]]
-- Builds on: [[Memoization]]
+- Compare: [[Context Switching]]
+- Enables: [[Dynamic Programming]]
 - See: [[Neuroscience MOC]]
 
 ## Source

@@ -3,18 +3,18 @@
 #cs
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+A rule that looks arbitrary until you see the failure it was written to prevent.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
 
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Compare: [[Opportunity Cost]]
-- Compare: [[The Design of Everyday Things]]
-- Related: [[Epigenetics]]
+- Builds on: [[Convexity]]
+- Related: [[Conspicuous Consumption and Veblen Goods]]
+- Related: [[Deadlock]]
 - See: [[CS MOC]]
 
 ## Source

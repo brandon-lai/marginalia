@@ -3,18 +3,23 @@
 #art
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+The useful version of this is narrower than the popular version.
 
 ## How It Works
 It works by pushing a decision to the point where the most context is available.
 
+```python
+def donor_portraits(xs):
+    return sorted(xs)
+```
+
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Related: [[Binary Search Tree]]
-- Enables: [[Dynamic Programming]]
-- Builds on: [[Recursion]]
+- Related: [[Portraiture Before Photography]]
+- Enables: [[Linear Perspective]]
+- Enables: [[Deadweight Loss]]
 - See: [[Art MOC]]
 
 ## Source

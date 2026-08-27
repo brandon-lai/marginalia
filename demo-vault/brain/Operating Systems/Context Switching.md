@@ -3,24 +3,18 @@
 #operating-systems
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+Small enough to state in a sentence, large enough to reorganise a design around.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
-
-```python
-def context_switching(xs):
-    return sorted(xs)
-```
+The cost is paid in coordination; the benefit is collected in throughput.
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Compare: [[Long-Term Potentiation]]
-- Compare: [[Rate Limiting]]
-- Enables: [[Action Potential]]
-- Related: [[Observability]]
+- Contrasts with: [[Dynamic Programming]]
+- Enables: [[Donor Portraits]]
+- Related: [[The Italian Renaissance]]
 - See: [[Operating Systems MOC]]
 
 ## Source

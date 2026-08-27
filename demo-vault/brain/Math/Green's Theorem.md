@@ -3,18 +3,19 @@
 #math
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+It answers a question I did not know I was asking until I had the vocabulary for it.
 
 ## How It Works
-The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+It works by pushing a decision to the point where the most context is available.
 
 ## Why It Matters
 It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Enables: [[Virtual Memory]]
+- Contrasts with: [[The Hippocampus]]
+- Builds on: [[Message Queue]]
 - Related: [[Comparative Advantage]]
-- Related: [[Service Discovery]]
+- Related: [[Epigenetics]]
 - See: [[Math MOC]]
 
 ## Source

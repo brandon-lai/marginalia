@@ -3,15 +3,15 @@
 #cs
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+The definition is short; the consequences take a while to feel in the hands.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
+It works by pushing a decision to the point where the most context is available.
 
 | Property | Value | Why |
 |---|---|---|
 | Cost | amortized O(1) | the common path |
-| Failure | loud | it retries first |
+| Failure | delayed | nothing measures it |
 
 ```python
 def graph_traversal(xs):
@@ -19,12 +19,11 @@ def graph_traversal(xs):
 ```
 
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Compare: [[Rate Limiting]]
-- Compare: [[Context Switching]]
-- Contrasts with: [[Cache]]
+- Related: [[Conspicuous Consumption and Veblen Goods]]
+- Compare: [[Anamorphosis]]
 - See: [[CS MOC]]
 
 ## Source

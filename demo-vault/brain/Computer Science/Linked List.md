@@ -3,18 +3,13 @@
 #cs
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+The idea is simpler than the name suggests once you see what it is protecting against.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | amortized O(1) | after the index is warm |
-| Failure | delayed | nothing measures it |
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
 
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
 - Builds on: [[Two Pointer Technique]]

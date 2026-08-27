@@ -3,17 +3,24 @@
 #system-design
 
 ## What It Is
-Worth holding onto because it reframes a problem I kept solving badly by instinct.
+This shows up everywhere once you have a word for it, which is most of the value of learning it.
 
 ## How It Works
-The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+Every implementation is some answer to the question of what you are willing to lose.
+
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(log n) | after the index is warm |
+| Failure | loud | it fails closed |
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Contrasts with: [[Conspicuous Consumption and Veblen Goods]]
-- Enables: [[Load Balancing]]
+- Related: [[Deadweight Loss]]
+- Enables: [[Context Switching]]
+- Enables: [[Public Goods]]
+- Related: [[Service Discovery]]
 - See: [[System Design MOC]]
 
 ## Source

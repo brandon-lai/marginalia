@@ -10,6 +10,48 @@ import { splitSections, joinSections, type DiffLine } from "./moc"
  * re-serialising HTML we did not write.
  */
 
+/** The entries currently listed under "## Recently Added", in order. */
+export function existingRecentlyAdded(content: string): { title: string; date: string }[] {
+  const sections = splitSections(content)
+  const sec = sections.find((s) => s.heading.toLowerCase() === "recently added")
+  if (!sec) return []
+  const out: { title: string; date: string }[] = []
+  for (const line of sec.lines) {
+    const m = line.match(/^\s*-\s+\[\[([^\]]+)\]\]\s*[—–-]\s*(.*)$/)
+    if (m) out.push({ title: m[1].trim(), date: m[2].trim() })
+  }
+  return out
+}
+
+/**
+ * Merge what git reports with what index.md already lists, git first.
+ *
+ * Git is authoritative for notes it knows about, but it cannot know about a
+ * note that has not been committed yet, and in a checkout with no history it
+ * reports nothing at all. Padding from the existing block means the diff never
+ * proposes deleting entries that were only missing because they could not be
+ * recomputed — a diff that overstates the change is worse than no diff, because
+ * the whole point of showing it is that Accept can be trusted.
+ */
+export function projectRecentlyAdded(
+  fromGit: { title: string; date: string }[],
+  existing: { title: string; date: string }[],
+  incoming: { title: string; date: string } | null,
+  limit = 6,
+): { title: string; date: string }[] {
+  const out: { title: string; date: string }[] = []
+  const seen = new Set<string>()
+  const push = (e: { title: string; date: string }) => {
+    if (seen.has(e.title) || out.length >= limit) return
+    seen.add(e.title)
+    out.push(e)
+  }
+  if (incoming) push(incoming)
+  for (const e of fromGit) push(e)
+  for (const e of existing) push(e)
+  return out
+}
+
 export function updateRecentlyAdded(
   content: string,
   recent: { title: string; date: string }[],

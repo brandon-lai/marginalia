@@ -3,10 +3,15 @@
 #math
 
 ## What It Is
-Worth holding onto because it reframes a problem I kept solving badly by instinct.
+The interesting claim is not what it does but what it refuses to promise.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The cost is paid in coordination; the benefit is collected in throughput.
+
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(1) | after the index is warm |
+| Failure | loud | it fails closed |
 
 ```python
 def convexity(xs):
@@ -14,12 +19,12 @@ def convexity(xs):
 ```
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Contrasts with: [[Binary Search Tree]]
-- Compare: [[Virtual Memory]]
-- Builds on: [[Donor Portraits]]
+- Related: [[Linked List]]
+- Compare: [[Hashmap and Dictionary]]
+- Builds on: [[Thinking in Systems]]
 - See: [[Math MOC]]
 
 ## Source

@@ -3,17 +3,18 @@
 #art
 
 ## What It Is
-Worth holding onto because it reframes a problem I kept solving badly by instinct.
+Small enough to state in a sentence, large enough to reorganise a design around.
 
 ## How It Works
-The cost is paid in coordination; the benefit is collected in throughput.
+Every implementation is some answer to the question of what you are willing to lose.
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Contrasts with: [[Price Elasticity]]
-- Compare: [[Thinking in Systems]]
+- Compare: [[Conspicuous Consumption and Veblen Goods]]
+- Related: [[Opportunity Cost]]
+- Enables: [[Linked List]]
 - See: [[Art MOC]]
 
 ## Source

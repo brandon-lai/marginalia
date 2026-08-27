@@ -3,29 +3,19 @@
 #operating-systems
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+Once named, this turns a recurring surprise into an expected cost.
 
 ## How It Works
-The cost is paid in coordination; the benefit is collected in throughput.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(1) | after the index is warm |
-| Failure | loud | it fails closed |
-
-```python
-def processes_and_thread(xs):
-    return sorted(xs)
-```
+The tradeoff is between doing work now and doing more work later under worse information.
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Builds on: [[Array and List]]
-- Builds on: [[Circuit Breaker]]
-- Enables: [[Moral Hazard]]
-- Related: [[The Italian Renaissance]]
+- Enables: [[Convexity]]
+- Compare: [[Circuit Breaker]]
+- Builds on: [[Public Goods]]
+- Related: [[Observability]]
 - See: [[Operating Systems MOC]]
 
 ## Source

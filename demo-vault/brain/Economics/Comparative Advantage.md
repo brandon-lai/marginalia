@@ -3,23 +3,18 @@
 #economics
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+Most of the difficulty here is bookkeeping, and most of the value is in noticing that early.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(log n) | the common path |
-| Failure | delayed | it retries first |
+Every implementation is some answer to the question of what you are willing to lose.
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Enables: [[Myelination]]
-- Compare: [[Consistent Hashing]]
-- Related: [[Queue]]
+- Related: [[Price Elasticity]]
+- Contrasts with: [[Network Effects]]
+- Builds on: [[CAP Theorem]]
 - See: [[Economics MOC]]
 
 ## Source

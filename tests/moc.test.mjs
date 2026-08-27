@@ -94,3 +94,44 @@ test("openTodos reports the section each item came from", () => {
     { text: "Beta", section: "Other" },
   ])
 })
+
+// The review screen's whole premise is that the diff shown is the diff applied.
+// A diff that proposes removing entries it merely failed to recompute is worse
+// than no diff at all.
+test("Recently Added never proposes dropping entries git could not recompute", async () => {
+  const { existingRecentlyAdded, projectRecentlyAdded, updateRecentlyAdded } = await import("./_load.mjs")
+  const indexMd = [
+    "---", "title: Brandon's Brain", "---", "",
+    "## Subjects", "", '<div class="subject-grid">', "</div>", "",
+    "## Recently Added", "",
+    "- [[Anamorphosis]] — Jun 04, 2026",
+    "- [[Donor Portraits]] — Jun 04, 2026",
+    "- [[Byzantine vs. Western Depictions of Christ]] — Jun 04, 2026",
+    "",
+  ].join("\n")
+
+  const existing = existingRecentlyAdded(indexMd)
+  assert.equal(existing.length, 3)
+  assert.equal(existing[2].title, "Byzantine vs. Western Depictions of Christ")
+
+  // git returns nothing (no history, shallow clone, demo vault)
+  const projected = projectRecentlyAdded([], existing, { title: "Distributed Tracing", date: "Aug 27, 2026" })
+  assert.equal(projected.length, 4)
+  assert.equal(projected[0].title, "Distributed Tracing")
+
+  const { diff, content } = updateRecentlyAdded(indexMd, projected)
+  assert.equal(diff.filter((d) => d.kind === "remove").length, 0, "nothing should be removed")
+  assert.equal(diff.filter((d) => d.kind === "add").length, 1)
+  for (const e of existing) assert.match(content, new RegExp(`\\[\\[${e.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\]\\]`))
+})
+
+test("the incoming note is never listed twice", async () => {
+  const { projectRecentlyAdded } = await import("./_load.mjs")
+  const out = projectRecentlyAdded(
+    [{ title: "Cache", date: "Jun 01, 2026" }],
+    [{ title: "Cache", date: "Jun 01, 2026" }, { title: "Big O", date: "May 30, 2026" }],
+    { title: "Cache", date: "Aug 27, 2026" },
+  )
+  assert.deepEqual(out.map((x) => x.title), ["Cache", "Big O"])
+  assert.equal(out[0].date, "Aug 27, 2026", "the incoming date wins")
+})

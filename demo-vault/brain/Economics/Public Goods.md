@@ -3,28 +3,17 @@
 #economics
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+The definition is short; the consequences take a while to feel in the hands.
 
 ## How It Works
 Every implementation is some answer to the question of what you are willing to lose.
 
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(n) | the common path |
-| Failure | loud | nothing measures it |
-
-```python
-def public_goods(xs):
-    return sorted(xs)
-```
-
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Enables: [[Comparative Advantage]]
-- Compare: [[The Design of Everyday Things]]
-- Related: [[Queue]]
+- Enables: [[Bayes' Theorem]]
+- Builds on: [[Deadlock]]
 - See: [[Economics MOC]]
 
 ## Source

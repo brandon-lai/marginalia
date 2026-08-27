@@ -3,22 +3,24 @@
 #neuroscience
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+The mechanism is mechanical; the interesting part is when it stops being the right choice.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The tradeoff is between doing work now and doing more work later under worse information.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | O(log n) | worst case only |
-| Failure | silent | it retries first |
+| Cost | O(n) | after the index is warm |
+| Failure | loud | nothing measures it |
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Enables: [[Stack]]
-- Contrasts with: [[Context Switching]]
+- Builds on: [[Sliding Window]]
+- Related: [[CAP Theorem]]
+- Related: [[Hashmap and Dictionary]]
+- Related: [[Distributed Tracing]]
 - See: [[Neuroscience MOC]]
 
 ## Source

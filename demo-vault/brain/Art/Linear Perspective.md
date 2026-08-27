@@ -3,22 +3,17 @@
 #art
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+The idea is simpler than the name suggests once you see what it is protecting against.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(n) | the common path |
-| Failure | silent | nothing measures it |
+It works by pushing a decision to the point where the most context is available.
 
 ## Why It Matters
 It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Compare: [[Big O]]
-- Related: [[Array and List]]
+- Compare: [[Array and List]]
+- Related: [[Donor Portraits]]
 - See: [[Art MOC]]
 
 ## Source

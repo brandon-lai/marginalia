@@ -3,23 +3,23 @@
 #art
 
 ## What It Is
-Worth holding onto because it reframes a problem I kept solving badly by instinct.
+The trap is treating it as a technique when it is really a constraint.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
+It works by pushing a decision to the point where the most context is available.
 
-```python
-def chiaroscuro(xs):
-    return sorted(xs)
-```
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(1) | worst case only |
+| Failure | delayed | it fails closed |
 
 ## Why It Matters
-Knowing this turns a class of surprising failures into an expected one.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Contrasts with: [[Load Balancing]]
-- Contrasts with: [[Myelination]]
-- Related: [[Portraiture Before Photography]]
+- Compare: [[Database Sharding]]
+- Enables: [[Conspicuous Consumption and Veblen Goods]]
+- Builds on: [[Price Elasticity]]
 - See: [[Art MOC]]
 
 ## Source

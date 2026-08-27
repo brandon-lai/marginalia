@@ -3,18 +3,23 @@
 #neuroscience
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+Worth holding onto because it reframes a problem I kept solving badly by instinct.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+
+```python
+def neuroplasticity(xs):
+    return sorted(xs)
+```
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Builds on: [[Public Goods]]
-- Enables: [[Sliding Window]]
-- Related: [[Service Discovery]]
+- Compare: [[Deadlock]]
+- Enables: [[Byzantine vs. Western Depictions of Christ]]
+- Related: [[Queue]]
 - See: [[Neuroscience MOC]]
 
 ## Source

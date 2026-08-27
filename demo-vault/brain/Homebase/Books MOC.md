@@ -13,9 +13,9 @@
 
 ## Topics To Explore
 *Unwritten notes — placeholders and future captures.*
-- [ ] Distributed Tracing
-- [ ] Amortized Analysis
+- [ ] Epigenetics
+- [ ] Service Discovery
 - [ ] Observability
 
 ## Key Questions This Subject Answers
-- Knowing this turns a class of surprising failures into an expected one.
+- It gives a name to something I had been working around without noticing.

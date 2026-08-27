@@ -1,0 +1,136 @@
+/*
+ * Design tokens, light and dark, taken from the vault's own quartz.config.ts so
+ * the app and the published site feel like one system — because they are one
+ * system reading one set of files.
+ *
+ * Both themes are defined here and every screen is checked in both. Reading
+ * happens at night (PRD §6.0.4 rule 7).
+ */
+
+:root {
+  /* Quartz lightMode */
+  --light: #faf8f8;
+  --lightgray: #e5e5e5;
+  --gray: #b8b8b8;
+  --darkgray: #4e4e4e;
+  --dark: #2b2b2b;
+  --secondary: #284b63;
+  --tertiary: #84a59d;
+  --highlight: rgba(143, 159, 169, 0.15);
+  --text-highlight: #fff23688;
+
+  /* Derived surfaces. Flat, no shadows except the floating popover. */
+  --bg: var(--light);
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2eeee;
+  --text: var(--dark);
+  --text-muted: var(--darkgray);
+  --text-faint: #7a7a7a;
+  --line: var(--lightgray);
+  --line-strong: #d2d2d2;
+  --accent: var(--secondary);
+  --accent-soft: rgba(40, 75, 99, 0.09);
+
+  /* Highlight colours. The four the capture popover offers. */
+  --hl-yellow: #fff236;
+  --hl-green: #a8e6a3;
+  --hl-blue: #a3d5ff;
+  --hl-pink: #ffb3d1;
+  --hl-alpha: 0.55;
+
+  /* Semantic */
+  --ok: #2f7d4f;
+  --ok-soft: rgba(47, 125, 79, 0.1);
+  --warn: #9a6a00;
+  --warn-soft: rgba(154, 106, 0, 0.12);
+  --danger: #a13d3d;
+  --danger-soft: rgba(161, 61, 61, 0.1);
+
+  --font-head: "Schibsted Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: "Source Sans 3", "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  --radius: 4px;
+  --hairline: 0.5px;
+}
+
+/* System default (no explicit choice stamped on the root). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --light: #161618;
+    --lightgray: #393639;
+    --gray: #646464;
+    --darkgray: #d4d4d4;
+    --dark: #ebebec;
+    --secondary: #7b97aa;
+    --tertiary: #84a59d;
+    --highlight: rgba(143, 159, 169, 0.15);
+    --text-highlight: #b3aa0288;
+
+    --bg: var(--light);
+    --bg-raised: #1d1d20;
+    --bg-sunken: #121214;
+    --text: var(--dark);
+    --text-muted: #b6b6b8;
+    --text-faint: #8a8a8d;
+    --line: var(--lightgray);
+    --line-strong: #4a464a;
+    --accent: var(--secondary);
+    --accent-soft: rgba(123, 151, 170, 0.14);
+
+    /* Alpha is much lower than in light mode on purpose: at 0.75 these fill
+       the surface rather than tint it, and near-white body text over the
+       filled yellow measured 3.2:1 — below AA. At 0.32 the same text measures
+       above 8:1 and the highlight still reads clearly as a highlight. */
+    --hl-yellow: #b3aa02;
+    --hl-green: #3f7a3a;
+    --hl-blue: #2f5f85;
+    --hl-pink: #8a3f60;
+    --hl-alpha: 0.32;
+
+    --ok: #6fbf8b;
+    --ok-soft: rgba(111, 191, 139, 0.14);
+    --warn: #d8ac4a;
+    --warn-soft: rgba(216, 172, 74, 0.14);
+    --danger: #e08585;
+    --danger-soft: rgba(224, 133, 133, 0.14);
+  }
+}
+
+/* Explicit dark, so a toggle wins in both directions. */
+:root[data-theme="dark"] {
+  --light: #161618;
+  --lightgray: #393639;
+  --gray: #646464;
+  --darkgray: #d4d4d4;
+  --dark: #ebebec;
+  --secondary: #7b97aa;
+  --tertiary: #84a59d;
+  --highlight: rgba(143, 159, 169, 0.15);
+  --text-highlight: #b3aa0288;
+
+  --bg: var(--light);
+  --bg-raised: #1d1d20;
+  --bg-sunken: #121214;
+  --text: var(--dark);
+  --text-muted: #b6b6b8;
+  --text-faint: #8a8a8d;
+  --line: var(--lightgray);
+  --line-strong: #4a464a;
+  --accent: var(--secondary);
+  --accent-soft: rgba(123, 151, 170, 0.14);
+
+  /* See the note in the prefers-color-scheme block above. */
+  --hl-yellow: #b3aa02;
+  --hl-green: #3f7a3a;
+  --hl-blue: #2f5f85;
+  --hl-pink: #8a3f60;
+  --hl-alpha: 0.32;
+
+  --ok: #6fbf8b;
+  --ok-soft: rgba(111, 191, 139, 0.14);
+  --warn: #d8ac4a;
+  --warn-soft: rgba(216, 172, 74, 0.14);
+  --danger: #e08585;
+  --danger-soft: rgba(224, 133, 133, 0.14);
+}

@@ -3,28 +3,22 @@
 #neuroscience
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+This shows up everywhere once you have a word for it, which is most of the value of learning it.
 
 ## How It Works
-The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+The tradeoff is between doing work now and doing more work later under worse information.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | O(1) | the common path |
-| Failure | delayed | nothing measures it |
-
-```python
-def long_term_potentiati(xs):
-    return sorted(xs)
-```
+| Cost | O(log n) | worst case only |
+| Failure | delayed | it retries first |
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Builds on: [[Virtual Memory]]
-- Compare: [[Price Elasticity]]
-- Builds on: [[Thinking in Systems]]
+- Related: [[Bayes' Theorem]]
+- Contrasts with: [[Array and List]]
 - See: [[Neuroscience MOC]]
 
 ## Source

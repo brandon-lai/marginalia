@@ -3,23 +3,23 @@
 #system-design
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+Small enough to state in a sentence, large enough to reorganise a design around.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The tradeoff is between doing work now and doing more work later under worse information.
 
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(1) | the common path |
-| Failure | silent | it fails closed |
+```python
+def cache(xs):
+    return sorted(xs)
+```
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Compare: [[Circuit Breaker]]
-- Contrasts with: [[Binary Search Tree]]
-- Related: [[Network Effects]]
+- Builds on: [[Linked List]]
+- Builds on: [[Message Queue]]
+- Related: [[Distributed Tracing]]
 - See: [[System Design MOC]]
 
 ## Source

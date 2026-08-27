@@ -2,21 +2,21 @@
 
 #books
 
-**Author:** Don Norman
-**Completed:** Feb 2026
-**Rating:** 9/10
+**Author:** James C. Scott
+**Completed:** Apr 2026
+**Rating:** 7/10
 
 ## The Big Idea
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+The first time this bites, it looks like a bug in something else entirely.
 
 ## Core Learnings
-1. The cost is paid in coordination; the benefit is collected in throughput.
-2. It is the difference between a system that bends and one that snaps.
-3. A small idea with a large blast radius across everything downstream of it.
+1. The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+2. It gives a name to something I had been working around without noticing.
+3. The idea is simpler than the name suggests once you see what it is protecting against.
 
 ## Personal Takeaways
-It is the difference between a system that bends and one that snaps.
+It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Related: [[Memoization]]
+- Related: [[Big O]]
 - See: [[Books MOC]]

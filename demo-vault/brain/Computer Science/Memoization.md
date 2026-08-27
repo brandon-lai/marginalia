@@ -3,22 +3,23 @@
 #cs
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+The interesting claim is not what it does but what it refuses to promise.
 
 ## How It Works
-The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
+The cost is paid in coordination; the benefit is collected in throughput.
 
-```python
-def memoization(xs):
-    return sorted(xs)
-```
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(log n) | the common path |
+| Failure | silent | it fails closed |
 
 ## Why It Matters
 It gives a name to something I had been working around without noticing.
 
 ## Connections
-- Enables: [[Array and List]]
-- Builds on: [[Linked List]]
+- Enables: [[Deadlock]]
+- Related: [[Green's Theorem]]
+- Contrasts with: [[Gradient and Directional Derivative]]
 - See: [[CS MOC]]
 
 ## Source

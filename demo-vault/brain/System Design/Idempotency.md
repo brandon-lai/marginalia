@@ -3,18 +3,28 @@
 #system-design
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+The first time this bites, it looks like a bug in something else entirely.
 
 ## How It Works
 The cost is paid in coordination; the benefit is collected in throughput.
 
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(log n) | the common path |
+| Failure | silent | nothing measures it |
+
+```python
+def idempotency(xs):
+    return sorted(xs)
+```
+
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Enables: [[Deadweight Loss]]
-- Related: [[Bayes' Theorem]]
-- Contrasts with: [[Anamorphosis]]
+- Builds on: [[Myelination]]
+- Contrasts with: [[Deadweight Loss]]
+- Enables: [[Deadlock]]
 - See: [[System Design MOC]]
 
 ## Source

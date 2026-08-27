@@ -3,22 +3,28 @@
 #cs
 
 ## What It Is
-Worth holding onto because it reframes a problem I kept solving badly by instinct.
+Most of the difficulty here is bookkeeping, and most of the value is in noticing that early.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | amortized O(1) | after the index is warm |
-| Failure | loud | it retries first |
+| Cost | amortized O(1) | the common path |
+| Failure | delayed | it fails closed |
+
+```python
+def stack(xs):
+    return sorted(xs)
+```
 
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Contrasts with: [[Recursion]]
-- Contrasts with: [[Virtual Memory]]
+- Enables: [[Array and List]]
+- Enables: [[CAP Theorem]]
+- Builds on: [[Recursion]]
 - See: [[CS MOC]]
 
 ## Source

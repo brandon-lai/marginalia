@@ -3,23 +3,23 @@
 #economics
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+The interesting claim is not what it does but what it refuses to promise.
 
 ## How It Works
 It works by pushing a decision to the point where the most context is available.
 
-```python
-def network_effects(xs):
-    return sorted(xs)
-```
+| Property | Value | Why |
+|---|---|---|
+| Cost | amortized O(1) | after the index is warm |
+| Failure | silent | it fails closed |
 
 ## Why It Matters
-Knowing this turns a class of surprising failures into an expected one.
+It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Enables: [[Virtual Memory]]
-- Enables: [[Database Sharding]]
-- Related: [[Epigenetics]]
+- Compare: [[Sorting Algorithms]]
+- Contrasts with: [[Deadweight Loss]]
+- Related: [[Sliding Window]]
 - See: [[Economics MOC]]
 
 ## Source

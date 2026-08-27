@@ -3,22 +3,18 @@
 #math
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+The definition is short; the consequences take a while to feel in the hands.
 
 ## How It Works
 The tradeoff is between doing work now and doing more work later under worse information.
 
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(log n) | worst case only |
-| Failure | loud | it retries first |
-
 ## Why It Matters
-It gives a name to something I had been working around without noticing.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Compare: [[Dynamic Programming]]
-- Related: [[Sorting Algorithms]]
+- Related: [[Action Potential]]
+- Related: [[Deadweight Loss]]
+- Related: [[Myelination]]
 - See: [[Math MOC]]
 
 ## Source

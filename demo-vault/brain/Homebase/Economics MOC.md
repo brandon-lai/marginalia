@@ -18,9 +18,9 @@
 
 ## Topics To Explore
 *Unwritten notes — placeholders and future captures.*
-- [ ] Amortized Analysis
-- [ ] Distributed Tracing
-- [ ] Cache Invalidation
+- [ ] Epigenetics
+- [ ] The Italian Renaissance
+- [ ] Service Discovery
 
 ## Key Questions This Subject Answers
-- Knowing this turns a class of surprising failures into an expected one.
+- It gives a name to something I had been working around without noticing.

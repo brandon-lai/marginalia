@@ -3,15 +3,15 @@
 #cs
 
 ## What It Is
-This shows up everywhere once you have a word for it, which is most of the value of learning it.
+Worth holding onto because it reframes a problem I kept solving badly by instinct.
 
 ## How It Works
-The cost is paid in coordination; the benefit is collected in throughput.
+The tradeoff is between doing work now and doing more work later under worse information.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | O(log n) | worst case only |
-| Failure | silent | it fails closed |
+| Cost | O(1) | worst case only |
+| Failure | delayed | it retries first |
 
 ```python
 def big_o(xs):
@@ -22,8 +22,9 @@ def big_o(xs):
 Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Contrasts with: [[Long-Term Potentiation]]
-- Compare: [[Action Potential]]
+- Contrasts with: [[Stack]]
+- Compare: [[Virtual Memory]]
+- Related: [[Deadlock]]
 - See: [[CS MOC]]
 
 ## Source

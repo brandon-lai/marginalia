@@ -3,18 +3,17 @@
 #art
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+The first time this bites, it looks like a bug in something else entirely.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The cost is paid in coordination; the benefit is collected in throughput.
 
 ## Why It Matters
 Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Compare: [[Convexity]]
-- Compare: [[Comparative Advantage]]
-- Related: [[Service Discovery]]
+- Enables: [[Big O]]
+- Builds on: [[Memoization]]
 - See: [[Art MOC]]
 
 ## Source

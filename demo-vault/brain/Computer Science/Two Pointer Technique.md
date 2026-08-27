@@ -3,28 +3,17 @@
 #cs
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+Once named, this turns a recurring surprise into an expected cost.
 
 ## How It Works
-The tradeoff is between doing work now and doing more work later under worse information.
-
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(log n) | after the index is warm |
-| Failure | silent | it retries first |
-
-```python
-def two_pointer_techniqu(xs):
-    return sorted(xs)
-```
+The cost is paid in coordination; the benefit is collected in throughput.
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Enables: [[Deadweight Loss]]
-- Builds on: [[Conspicuous Consumption and Veblen Goods]]
-- Related: [[Distributed Tracing]]
+- Compare: [[Thinking in Systems]]
+- Contrasts with: [[Conspicuous Consumption and Veblen Goods]]
 - See: [[CS MOC]]
 
 ## Source

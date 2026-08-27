@@ -3,23 +3,17 @@
 #math
 
 ## What It Is
-The mechanism is mechanical; the interesting part is when it stops being the right choice.
+This is the thing that separates a system that bends from one that snaps.
 
 ## How It Works
-The failure mode is not that it breaks loudly but that it degrades in a way nobody measures.
-
-```python
-def bayes_theorem(xs):
-    return sorted(xs)
-```
+Every implementation is some answer to the question of what you are willing to lose.
 
 ## Why It Matters
-It explains why the obvious fix usually makes the second-order problem worse.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Contrasts with: [[Consistent Hashing]]
-- Compare: [[Seeing Like a State]]
-- Enables: [[Sliding Window]]
+- Compare: [[Deadweight Loss]]
+- Compare: [[Linked List]]
 - See: [[Math MOC]]
 
 ## Source

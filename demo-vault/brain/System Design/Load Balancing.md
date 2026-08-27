@@ -3,22 +3,22 @@
 #system-design
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+The useful version of this is narrower than the popular version.
 
 ## How It Works
-It works by pushing a decision to the point where the most context is available.
+Every implementation is some answer to the question of what you are willing to lose.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | O(log n) | after the index is warm |
-| Failure | loud | it fails closed |
+| Cost | O(n) | worst case only |
+| Failure | loud | nothing measures it |
 
 ## Why It Matters
 Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Compare: [[Neuroplasticity]]
-- Contrasts with: [[Bayes' Theorem]]
+- Builds on: [[Cache]]
+- Builds on: [[Sorting Algorithms]]
 - See: [[System Design MOC]]
 
 ## Source

@@ -3,10 +3,15 @@
 #operating-systems
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+What makes this stick is that the same shape shows up in three unrelated places.
 
 ## How It Works
 The cost is paid in coordination; the benefit is collected in throughput.
+
+| Property | Value | Why |
+|---|---|---|
+| Cost | O(1) | after the index is warm |
+| Failure | loud | it fails closed |
 
 ```python
 def deadlock(xs):
@@ -17,9 +22,8 @@ def deadlock(xs):
 It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Builds on: [[Big O]]
-- Builds on: [[Context Switching]]
-- Enables: [[Array and List]]
+- Compare: [[Idempotency]]
+- Compare: [[Comparative Advantage]]
 - See: [[Operating Systems MOC]]
 
 ## Source

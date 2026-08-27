@@ -3,22 +3,24 @@
 #art
 
 ## What It Is
-The idea is simpler than the name suggests once you see what it is protecting against.
+What makes this stick is that the same shape shows up in three unrelated places.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The tradeoff is between doing work now and doing more work later under worse information.
 
-| Property | Value | Why |
-|---|---|---|
-| Cost | O(log n) | worst case only |
-| Failure | silent | nothing measures it |
+```python
+def byzantine_vs_western(xs):
+    return sorted(xs)
+```
 
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+It explains why the obvious fix usually makes the second-order problem worse.
 
 ## Connections
-- Contrasts with: [[Two Pointer Technique]]
-- Contrasts with: [[Idempotency]]
+- Contrasts with: [[Linear Perspective]]
+- Related: [[Linked List]]
+- Related: [[Binary Search Tree]]
+- Related: [[Distributed Tracing]]
 - See: [[Art MOC]]
 
 ## Source

@@ -17,9 +17,9 @@
 
 ## Topics To Explore
 *Unwritten notes — placeholders and future captures.*
-- [ ] Epigenetics
-- [ ] Property Testing
-- [ ] Observability
+- [ ] Queue
+- [ ] Distributed Tracing
+- [ ] The Italian Renaissance
 
 ## Key Questions This Subject Answers
 - It is the difference between a system that bends and one that snaps.

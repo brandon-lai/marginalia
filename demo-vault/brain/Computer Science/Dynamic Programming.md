@@ -3,27 +3,23 @@
 #cs
 
 ## What It Is
-A small idea with a large blast radius across everything downstream of it.
+This is the thing that separates a system that bends from one that snaps.
 
 ## How It Works
-The cost is paid in coordination; the benefit is collected in throughput.
+Every implementation is some answer to the question of what you are willing to lose.
 
 | Property | Value | Why |
 |---|---|---|
-| Cost | O(log n) | the common path |
+| Cost | O(n) | the common path |
 | Failure | silent | it fails closed |
 
-```python
-def dynamic_programming(xs):
-    return sorted(xs)
-```
-
 ## Why It Matters
-It is the difference between a system that bends and one that snaps.
+Knowing this turns a class of surprising failures into an expected one.
 
 ## Connections
-- Enables: [[Big O]]
-- Related: [[Comparative Advantage]]
+- Contrasts with: [[Stack]]
+- Compare: [[Consistent Hashing]]
+- Builds on: [[Binary Search Tree]]
 - See: [[CS MOC]]
 
 ## Source

@@ -3,18 +3,17 @@
 #cs
 
 ## What It Is
-Worth holding onto because it reframes a problem I kept solving badly by instinct.
+This shows up everywhere once you have a word for it, which is most of the value of learning it.
 
 ## How It Works
-Every implementation is some answer to the question of what you are willing to lose.
+The tradeoff is between doing work now and doing more work later under worse information.
 
 ## Why It Matters
 It is the difference between a system that bends and one that snaps.
 
 ## Connections
-- Builds on: [[Recursion]]
-- Builds on: [[Circuit Breaker]]
-- Contrasts with: [[Stack]]
+- Enables: [[Linear Perspective]]
+- Enables: [[Cache]]
 - See: [[CS MOC]]
 
 ## Source

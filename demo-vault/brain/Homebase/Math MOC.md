@@ -15,9 +15,9 @@
 
 ## Topics To Explore
 *Unwritten notes — placeholders and future captures.*
-- [ ] Property Testing
-- [ ] Queue
-- [ ] Epigenetics
+- [ ] Observability
+- [ ] The Italian Renaissance
+- [ ] Service Discovery
 
 ## Key Questions This Subject Answers
-- Knowing this turns a class of surprising failures into an expected one.
+- It is the difference between a system that bends and one that snaps.
