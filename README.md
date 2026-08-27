@@ -19,6 +19,10 @@ the only source of truth.
 
 ## Running it
 
+**Connecting your own vault for the first time: see [SETUP.md](SETUP.md)** — it
+walks through the env file, the database, the Chrome extension, your first
+capture-to-commit loop, and how to back any of it out.
+
 ```bash
 npm install
 cp .env.example .env.local     # then edit it
