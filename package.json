@@ -1,0 +1,48 @@
+{
+  "name": "marginalia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A research and reading frontend for the brain-frontend vault.",
+  "scripts": {
+    "dev": "next dev -p 3117",
+    "build": "next build",
+    "start": "next start -p 3117",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import ./scripts/ts-resolve.mjs --test tests/*.test.mjs",
+    "db:init": "node scripts/db-init.mjs",
+    "seed": "node scripts/seed-demo-vault.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.121.0",
+    "@mozilla/readability": "0.6.0",
+    "dompurify": "3.4.14",
+    "flexsearch": "0.8.212",
+    "github-slugger": "2.0.0",
+    "gray-matter": "4.0.3",
+    "jsdom": "30.0.1",
+    "mdast-util-to-string": "4.0.0",
+    "next": "16.3.3",
+    "postgres": "3.4.9",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "rehype-raw": "7.0.0",
+    "rehype-stringify": "10.0.1",
+    "remark-gfm": "4.0.1",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.2",
+    "shiki": "1.29.2",
+    "unified": "11.0.5",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/jsdom": "27.0.0",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.4",
+    "chokidar": "5.0.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "type": "module"
+}
